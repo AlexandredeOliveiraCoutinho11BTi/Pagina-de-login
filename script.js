@@ -17,6 +17,9 @@ function init() {
          
         `
 
+        const logoutButton = document.querySelector("logout")
+        logoutButton.addEventListener("click", logout)
+
         return
     }
 
@@ -25,6 +28,11 @@ function init() {
         <a href="./pages/login.html">login</a>
     </li>
             `
+}
+
+function logout() {
+    sessionStorage = removeItem("user")
+    window.location.reload()
 }
 
 init()
