@@ -5,7 +5,7 @@ const main = document.querySelector(".main")
 
 
 async function receberMensagemDoBackend () {
-    const response = await fetch("https://backend02mb-phi.vercel.app").then (response => response.json())
+    const response = await fetch("backend02mb-phi.vercel.app").then (response => response.json())
 
     response.map((person) => {
     main.innerHTML += ` 
