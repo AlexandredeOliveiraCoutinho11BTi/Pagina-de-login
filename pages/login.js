@@ -13,7 +13,7 @@ async function login() {
         password
     }
 
-   const response = await fetch("backend02mb-phi.vercel.app", {
+   const response = await fetch("https://backend02mb-phi.vercel.app/", {
         method: "POST",
         headers: {
             "Content-type": "application/json" 
