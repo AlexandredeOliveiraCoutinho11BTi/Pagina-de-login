@@ -13,11 +13,11 @@ function init() {
          <a href="./pages/jogar.html">Jogar</a>
          </li>
          <li><h2>Usuário: ${user.name}</h2></li>
-         <li><button>Sair</button></li>
+         <li><button class="logout">Sair</button></li>
          
         `
 
-        const logoutButton = document.querySelector("logout")
+        const logoutButton = document.querySelector(".logout")
         logoutButton.addEventListener("click", logout)
 
         return
