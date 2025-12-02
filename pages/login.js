@@ -4,6 +4,7 @@ button.onclick = (event) => {
     event.preventDefault()
     login()
 }
+
 async function login() {
     const email = document.querySelector("#email").value
     const password = document.querySelector("#senha").value
@@ -13,24 +14,25 @@ async function login() {
         password
     }
 
-   const response = await fetch("https://backend02mb-phi.vercel.app/login", {
+    const response = await fetch("https://backend02mb-phi.vercel.app/login", {
         method: "POST",
         headers: {
-            "Content-type": "application/json" 
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify({ user })
     }).then(response => response.json())
 
-   if (response.message) {
-    alert (response.message)
-    return
-   }
+    if (response.message) {
+        alert(response.message)
+        return
+    }
 
+    const { id, name } = response
 
-   const {id, name} = response
+    sessionStorage.setItem("user", JSON.stringify({ id, name }))
 
-   sessionStorage.setItem("user", JSON.stringify({id, name}))
+    alert("Login realizado comm sucesso!")
 
-   alert("Login realizado com sucesso")
-   window.location.href = "../index.html"
+    window.location.href = "../index.html"
+
 }
