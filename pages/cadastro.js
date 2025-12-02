@@ -13,7 +13,7 @@ async function sendUser() {
     const user = { name, email, password };
 
     try {
-        const response = await fetch("https://backend02mb-phi.vercel.app/", {
+        const response = await fetch("https://backend02mb-phi.vercel.app/cadastrar", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user)
